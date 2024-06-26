@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Contact form</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <main>
+    <div class="contact-form">
+      <div class="success-state" data-active="false">
+        <p class="confirmation">
+          <img src="assets/images/icon-success-check.svg" alt="">
+          <span>
+            Message Sent!
+          </span>
+        </p>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+      <h1>Contact Us</h1>
+      <div class="wrapper"> 
+
+        <div class="user-name">
+          <div>
+            <label for="fName">First Name <span>*</span></label>
+            <input type="text" name="fName" id="fName">
+            <span class="error" data-error="false">This field is required</span>
+          </div>
+
+          <div>
+            <label for="lName">Last Name <span>*</span></label>
+            <input type="text" name="lName" id="lName">
+            <span class="error" data-error="false">This field is required</span>
+          </div>
+        </div>
+
+        <div class="email">
+          <label for="email">Email Address <span>*</span></label>
+          <input type="email" name="email" id="email">
+          <span class="error" data-error="false">Please enter a valid email address</span>
+        </div>
+
+        <div class="queryType">
+          <label for="query-type">Query Type <span>*</span></label>
+          <div class="query-type__wrapper">
+            <div>
+              <input type="button" name="query-type" id="query-type" aria-current="false">
+              <p>General Enquiry</p>
+            </div>
+            <div>
+              <input type="button" name="query-type" id="query-type" aria-current="false">
+              <p>Support Request</p>
+            </div>
+          </div>
+          <span class="error" data-error="false">Please select a query type</span>
+        </div>
+
+        <div class="message">
+          <label for="message">Message <span>*</span></label>
+          <textarea name="message" id="message"></textarea>
+          <!-- <input type="text" name="message" id="message"> -->
+          <span class="error" data-error="false">This field is required</span>
+        </div>
+
+        <div>
+          <div class="consent-btn">
+            <button class="consent" aria-checked="false"></button>
+            <p>I consent to being contacted by the team <span>*</span></p>
+          </div>
+          <span class="error" data-error="false">To submit this form, please consent to being contacted</span>
+        </div>
+
+        <div class="submit-btn">
+          <button>Submit</button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

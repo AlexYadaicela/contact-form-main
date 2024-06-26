@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root{
+    --clr-primary-200: hsl(148, 38%, 91%); 
+    --clr-primary-400: hsl(0, 66%, 54%); 
+    --clr-primary-600: hsl(169, 82%, 27%); 
+
+    --clr-neutral-100: hsl(0, 0%, 100%); 
+    --clr-neutral-500: hsl(186, 15%, 59%); 
+    --clr-neutral-900: hsl(187, 24%, 22%); 
+
+
+    --ff-primary: "Karla", sans-serif;; 
+    --fw-regular: 400; 
+    --fw-bold: 700; 
+}
+
+/* general css reset */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    font: inherit; 
+    margin: 0; 
+}
+
+body{
+    background-color: var(--clr-primary-200);
+    font-family: var(--ff-primary); 
+}
+
+img{
+    max-inline-size: auto;
+    block-size: 100%; 
+    display: block;
+}
+
+.contact-form{
+    position: relative; 
+    background-color: var(--clr-neutral-100);
+    border-radius: 15px;
+    margin: 1.5rem 1rem; 
+    padding-inline: 1.3rem;
+    padding-block: 1.5rem;
+    max-width: 40rem; 
+}
+
+@media(min-width: 40rem){
+    .contact-form{
+        margin-inline: auto;
+    }
+}
+
+h1{
+    font-weight: var(--fw-bold);
+    font-size: 2rem; 
+    padding-block-end: 1.6rem; 
+}
+
+.wrapper{
+    display: grid; 
+    gap: 1.7rem; 
+}
+
+.user-name div, .email, .queryType, .message{
+    display: flex; 
+    flex-direction: column;
+}
+
+.user-name div, .email, .message{
+    gap: 0.7rem;
+}
+
+.queryType{
+    gap: 1rem; 
+}
+
+input, .queryType div > div{
+    border: 1px solid var(--clr-neutral-500);
+    border-radius: 5px;
+}
+
+input:not(input[name="message"]){
+    height: 3rem;
+}
+
+span{
+    color: var(--clr-primary-600);
+}
+
+label span{
+    margin-inline-start: 0.5rem;
+}
+
+.user-name{
+    display: flex; 
+    flex-direction: column;
+    gap: 1.7rem; 
+}
+
+@media(min-width: 40em){
+    .user-name{
+        flex-direction: row;
+    }
+
+    .user-name > *{
+        flex: 1 1 0px; 
+    }
+}
+
+.query-type__wrapper{
+    display: flex; 
+    flex-direction: column;
+    gap: 0.9rem; 
+}
+
+@media(min-width: 40em){
+    .query-type__wrapper{
+        flex-direction: row;
+    }
+    .query-type__wrapper > * {
+        flex: 1 1 0px; 
+    }
+}
+
+.query-type__wrapper > div{
+    display: flex;
+    gap: 1rem; 
+    align-items: center;
+    height: 3rem;
+}
+
+.query-type__wrapper > div input{
+    border-radius: 5rem;
+    margin-inline-start: 1.5rem;
+    background-color: transparent;
+    width: 1.279rem;
+    height: 1.279rem;
+}
+.query-type__wrapper > div input[aria-current="true"]{
+    background-image: url(assets/images/icon-radio-selected.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0; 
+}
+
+.query-type__wrapper > div:has(input[aria-current="true"]){
+    background-color: var(--clr-primary-200);
+    border-color: var(--clr-primary-600);
+}
+
+.consent-btn{
+    display: flex;   
+    align-items: center;  
+    gap: 1rem; 
+}
+
+input:hover{
+    cursor: pointer;
+}
+.error{
+    display: none; 
+}
+
+.error[data-error="true"]{
+    color: red; 
+    display: block;
+    font-size: 0.785rem;
+}
+
+.consent-btn{
+    margin-block-end: 0.6rem;
+}
+
+textarea{
+    resize: none;
+    line-height: 1.5rem;
+    padding: 0.5rem; 
+    height: 10rem;
+}
+
+.submit-btn button{
+    border-radius: 10px;
+    color: var(--clr-neutral-100); 
+    background-color: var(--clr-primary-600);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; ;
+    border: 0; 
+    width: 100%; 
+    height: 3rem;
+}
+
+.consent-btn button{
+    background-color: transparent;
+    border-radius: 1px;
+    padding: 0.5rem; 
+    height: 1rem;
+    border: 1px solid gray; 
+}
+
+@media(min-width: 40em){
+    .consent-btn button{
+        width: 1.2rem; 
+    }
+}
+
+.consent[aria-checked="true"]{
+    border: 0; 
+    background-image: url(assets/images/icon-checkbox-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+button:hover, .consent-btn:hover{
+    cursor: pointer;
+}
+
+.submit-btn button:hover{
+    background-color: var(--clr-neutral-900);
+}
+
+.success-state{
+    padding: 1rem; 
+    color: var(--clr-neutral-100);
+    position: absolute; 
+    background-color: var(--clr-neutral-900);
+    border-radius: 10px;
+    font-size: 0.775rem; 
+    top: -10rem; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.success-state[data-active="true"]{
+    top: 5%; 
+}
+
+.confirmation{
+    display: flex;
+    align-items: center;
+    margin-block-end: 1rem;
+}
+
+.confirmation span{
+    color: var(--clr-neutral-100); 
+    font-weight: var(--fw-bold);
+    margin-inline-start: 0.5rem;
+}
